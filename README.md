@@ -8,7 +8,7 @@ Nessa dashboard ela precisa que tenha 4 graficos, e um mecanismo de pesquisa ond
 
 <ol>
   <li>Grafico de relação de vendas por período (dia, mês, trimestre, semestre, ano);</li>
-  <li>Grafico de venda por região (data/regiões.json);</li>
+  <li>Grafico de venda por região (data/region.json);</li>
   <li>Grafico relação período/região;</li>
   <li>Grafico de conversão do cliente (visita/compra);</li>
 </ol>
