@@ -18,7 +18,7 @@ Nessa dashboard ela precisa que tenha 4 graficos, e um mecanismo de pesquisa ond
 <ul>
   <li>Domínio com Java Script</li>
   <li>Domínio com o Vue.Js</li>
-  <li>Utilização de MockAPI </li>
+  <li>Utilização de MockAPI para armazenar os dados dos gráficos para utilização dos componentes da página</li>
   <li>Clean Code</li>
 </ul>
 
@@ -26,7 +26,7 @@ Nessa dashboard ela precisa que tenha 4 graficos, e um mecanismo de pesquisa ond
 
 <ul>
   <li>Utilização de Docker</li>
-  <li>Utilização de Nuxt.Js</li>
+  <li>Utilização de Nuxt.Js e seus recursos : Conceitos, estrutura de diretórios, entre outros</li>
   <li>Utilização de Vuetify </li>
   <li>Utilização de Mirage.Js</li>
 </ul>
