@@ -15,7 +15,7 @@
     <h6>Quantidade</h6>
     <h6>Lucro</h6>
     </div>
-    <div v-for="item in produtos" :key="item.name" class="d-flex justify-space-between">
+    <div v-for="item in maisVendidos" :key="item.name" class="d-flex justify-space-between">
         <div>{{item.categoria}}</div>
         <div>{{item.name}}</div>
         <div>{{item.vendas}}</div>
@@ -28,57 +28,29 @@
 </template>
 
 <script>
+import _ from 'lodash';
+
 export default {
+    props:{
+      compProdutos: []
+    },
     data(){
         return{
             maisVendidos: [],
-            produtos: [
-          {
-            name: 'Yogurt',
-            quantidade: 100,
-            preco: 35.00,
-            vendas: 10,
-            cash: 175,
-            categoria: 'Organico',
-            status: 'Em estoque'
-          },
-          {
-            name: 'casa Yogurt',
-            quantidade: 300,
-            preco: 15.00,
-            vendas: 5,
-            cash: 75,
-            categoria: 'Comum',
-            status: 'Em estoque'
-          }, 
-          {
-            name: 'frango',
-            quantidade: 100,
-            preco: 35.00,
-            vendas: 4,
-            cash: 175,
-            categoria: 'Organico',
-            status: 'Em estoque'
-          },
-          {
-            name: 'peixe',
-            quantidade: 300,
-            preco: 15.00,
-            vendas: 1,
-            cash: 75,
-            categoria: 'Comum',
-            status: 'Em estoque'
-          },                              
-        ],
+            produtos: this.compProdutos,
         }
     },
     methods: {
         calculaVendas(array){            
-           var arr = array;
+           let max = _
+                .chain(array)
+                .groupBy('categoria')
+                .sortBy('vendas')
+                .map(o => _(o).reverse().first())
+                .flatten()
+                .value();
 
-            var obj = arr.reduce((r, o) => (o.value < (r[o.name] || {}).value || (r[o.name] = o), r), {});
-
-            console.log( Object.values(obj) );
+            this.maisVendidos = max;
         }
     },
     mounted(){

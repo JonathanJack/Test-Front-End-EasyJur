@@ -1,5 +1,5 @@
 <template>
-<div>
+<div>  
   <v-text-field
     v-model="search"
     label="Buscar por nome ou status"
@@ -9,7 +9,7 @@
   />
   <v-data-table
     :headers="headers"
-    :items="desserts"
+    :items="produtos"
     :search="search"
     :custom-filter="filter"
     item-key="name"
@@ -19,7 +19,7 @@
     
   >
     <template v-slot:group.header="{items,isOpen,toggle}">
-      <th colspan="4">
+      <th colspan="5">
         <v-icon @click="toggle">{{isOpen ? 'mdi-minus' : 'mdi-plus'}}</v-icon>
         {{ items[0].categoria }}
       </th>
@@ -29,7 +29,8 @@
       <td>{{item.name}}</td>
       <td>{{item.quantidade}}</td>
       <td>{{item.preco}}</td>
-      <td>{{item.status}}</td>
+      <td>{{item.vendas}}</td>
+      <td>{{item.estoque}}</td>
      </tr>
     </template>
   
@@ -39,6 +40,9 @@
 
 <script>
   export default {
+    props: {
+      compProdutos: []
+    },
     data () {
       return {
         search: '',
@@ -46,105 +50,23 @@
           { text: 'Produto',value: 'name'},
           { text: 'Quantidade', value: 'quantidade'},
           { text: 'Preço', value: 'preco'},
+          { text: 'Vendas', value: 'vendas'},
           { text: 'Existe em estoque?', value: 'status'},
           
         ],
-        desserts: [
-          {
-            name: 'Maça',
-            quantidade: 50,
-            preco: 100,
-            status: 'Sim',
-            categoria: 'Comum'
-          },
-          {
-            name: 'banana',
-            quantidade: 23,
-            preco: 15.00,
-            status: 'Sim',
-            categoria: 'Comum'
-          },   
-            {
-            name: 'boja',
-            quantidade: 50,
-            preco: 30,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },   
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },  
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },  
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },  
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },        
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },  
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },  
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },  
-          {
-            name: 'carro',
-            quantidade: 23,
-            preco: 4,
-            status: 'Não',
-            categoria: 'Orgânico'
-          },  
-          
-        ],
+        produtos: this.compProdutos,
       }
     },
-    methods: {
+    methods: {      
       filter(value,search,item){
         let inName = RegExp(search,'i').test(item.name)
-        let inStatus = RegExp(search,'i').test(item.status)
+        // let inStatus = RegExp(search,'i').test(item.status)
 
-        return inName | inStatus
+        return inName
       }
+    },
+    mounted(){    
+      console.log(this.compProdutos)  
     }
   }
 </script>
