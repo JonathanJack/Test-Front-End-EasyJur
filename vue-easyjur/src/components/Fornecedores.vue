@@ -18,7 +18,7 @@ hover
           <td>{{ item.name }}</td>
 
           <td width="30px">
-                <v-tooltip top>
+                <v-tooltip top color="black">
                   <template v-slot:activator="{ on, attrs }">
                     <v-img
                       color="primary"
@@ -35,7 +35,7 @@ hover
                 </v-tooltip>          
           </td>
           <td>
-              <a  href="https://api.whatsapp.com/send?phone=5521989489644text=Texto%20aqui"
+              <a class="cta-whatsapp"  :href="'https://api.whatsapp.com/send?phone=' + item.whatstapp + '=Texto%20aqui'"
               target="_blank" style="width: 30px">
                 <svg enable-background="new 0 0 512 512" width="20" height="20" version="1.1" 
                 viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@ hover
             value: 'name',
           },          
           { text: 'Telefone Fixo', value: 'fat' },
-          { text: 'Whataspp', value: 'carbs' },
+          { text: 'Whataspp', value: 'whatstapp' },
           
           
           
@@ -72,27 +72,27 @@ hover
           {
             name: 'Fazendinha Sol',            
             tel: '24568761',
-            carbs: '9989489644',           
+            whatstapp: '999999999',           
           },
           {
             name: 'Colina Feliz',            
             tel: '24568761',
-            carbs: '9989489644',           
+            whatstapp: '888888888',           
           },
           {
             name: 'Mohamed Agrícola',            
             tel: '24568761',
-            carbs: '9989489644',           
+            whatstapp: '777777777',           
           },
           {
             name: 'Rui da Terra',            
             tel: '24568761',
-            carbs: '9989489644',           
+            whatstapp: '666666666',           
           },
           {
             name: 'Fazenda orgânica',            
             tel: '24568761',
-            carbs: '9989489644',           
+            whatstapp: '555555555',           
           },   
         ],
       }
@@ -105,17 +105,19 @@ hover
   width: 23px
 }
 
-a{
+.cta-whatsapp{
+ display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.3s;
-  -webkit-transition-property: transform;
 }
 
-a:hover{
+.cta-whatsapp:hover{
   -webkit-transform: scale(1.1);
   transform: scale(1.7);
   

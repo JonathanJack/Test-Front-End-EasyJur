@@ -3,7 +3,7 @@
     <v-navigation-drawer 
     app  
     clipped  
-    dark 
+    
     color="#356097"
     permanent
         expand-on-hover
@@ -12,11 +12,30 @@
     
     >
       <v-list>
-        <v-list-item class="pr-0 " v-for="(aba,index) in abas" :key="index">
-          <v-list-item-icon>
-            <v-icon class="">XC</v-icon></v-list-item-icon>
-          <v-list-item-title class="tittle-menu">{{aba.nome}}</v-list-item-title>
-        </v-list-item>
+        
+         <div class="item-list ">
+          <v-img class="item-img" :src="require('../assets/home.png')" ></v-img>         
+          <span class="tittle-menu">Home</span>
+         </div>
+          <div class="item-list">
+            <v-img class="item-img" :src="require('../assets/client.png')"></v-img>         
+            <span class="tittle-menu">Clientes</span>
+         </div>
+          <div class=" item-list ">
+            <v-img class="item-img" :src="require('../assets/supplier.png')"></v-img>         
+            <span class="tittle-menu">Fornecedores</span>
+         </div>
+          <div class="item-list">
+            <v-img class="item-img" :src="require('../assets/product.png')"></v-img>         
+            <span class="tittle-menu">Produtos</span>
+         </div>
+          <div class="item-list">
+            <v-img class="item-img" :src="require('../assets/dashboard.png')"></v-img>         
+            <span class="tittle-menu">Dashboard</span>
+         </div>
+         
+        
+        
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -53,12 +72,30 @@ data(){
 
 <style>
 .tittle-menu{
-  cursor: pointer;
+  font-size: 15px
 
  
 }
+
+.item-list{
+  display: flex;
+  
+  align-items: center;
+  padding: 10px 5px 10px 0px;
+  margin: 20px 0px;
+  color: white;
+  cursor: pointer;
+
+}
  .item-list:hover{
-    display: none;
+    background-color: #456b9a
   }
+.item-img{
+  color: red;
+  max-width: 40px;
+  margin: 0 10px;
+  
+}
+
 
 </style>
