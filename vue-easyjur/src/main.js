@@ -15,10 +15,6 @@ import 'echarts/lib/chart/line'
 import "@vue/composition-api";
 import "echarts";
 
-
-
-
-
 // Vue.component('chart',Echarts);
 Vue.component("v-chart", VueECharts);
 
