@@ -1,29 +1,55 @@
 <template>
 
-<v-chart  :option="option"></v-chart >
+
+
+<v-chart class="mt-5 " :option="option" ></v-chart > 
 
 </template>
 
 <script>
+//  import { INIT_OPTIONS_KEY } from 'vue-echarts' // in component options { provide: { [INIT_OPTIONS_KEY]: { ... } } } 
+
+
   export default{
     props:{
-      totalQuarterSales: []
+      totalQuarterSales: [],
+      compColor: String,
+      compTittle: String
     },
     name: 'simpleChart',
      data(){
        return{
           option: {
+            title: {
+              text: this.compTittle
+            },
             xAxis: {
-            data: ['A', 'B', 'C','D']
+            data: ['Jan', 'FEV', 'Mar']
             },
             yAxis: {},
             series: [
               {
+                color: this.compColor, 
+                areaStyle: {},
                 data: this.totalQuarterSales,
                 type: 'line',
-                smooth: true
+                smooth: true,               
+                lineStyle: {
+                  normal:{                    
+                    width: 3,
+                    type: 'line'
+                  }
+                },
+                label: {
+        show: true,
+        position: 'bottom',
+        textStyle: {
+          fontSize: 12
+        }
+      }
+                
               }
-            ]
+            ],           
           }
         }
     },
@@ -36,3 +62,14 @@
                     
   }
 </script>
+
+
+<style>
+    .echarts {
+        width: 50%;
+        height: 300px; 
+    }
+
+    
+ 
+</style>

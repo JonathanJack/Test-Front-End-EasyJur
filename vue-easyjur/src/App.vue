@@ -1,28 +1,33 @@
 <template>
-  <v-app>
+ <v-app>
     
-
-    <v-main class="d-flex">
-    <Header/>
-    <Grafico :totalQuarterSales="totalQuarterSales"/>
-   <div class="d-flex ">
-      <div>
-        <Produtos2 :compProdutos="compProdutos" disabled/>
-      </div>
-      <div class="w-25">
-        <TopVendas :compProdutos="compProdutos"/>
-      </div>
-    </div> 
     
-    </v-main>
-  </v-app>
+  <v-main class="backgroung-color">
+    <Header/> 
+    <Menu/>
+  
+    <v-row >    
+      
+        <Grafico class="col-12 col-md-6" compTittle="Vendas totais | últimos 3 meses" :totalQuarterSales="totalQuarterSales" compColor="#5a8929"/>        
+  
+    
+        <Grafico class="col-12 col-md-6" :totalQuarterSales="this.compProdutos[0].vendaTri" compTittle="Vendas totais por produto"/>         
+           
+    </v-row>
+    
+    <Produtos2 :compProdutos="compProdutos" />        
+                             
+  </v-main>
+</v-app>
 </template>
 
 <script>
 import Produtos2 from './components/Produtos2';
-import TopVendas from './components/TopVendas'
+
 import Header from './components/Header'
 import Grafico from './components/Grafico'
+import Menu from './components/Menu'
+
 
 export default {
   name: 'App',
@@ -30,28 +35,29 @@ export default {
   components: {
     Header,
     Produtos2,
-    TopVendas,
+    // TopVendas,
     Grafico,
+    Menu,
   },
   data(){
     return{
-      compProdutos: [],
-      totalQuarterSales: []
+      compProdutosTotal: [],
+      totalQuarterSales: [],      
     }
   },
   methods: {
 
 
       calcTotalQuarterSales(){
-        let v1;
-        let v2;
-        let v3;
+        let v1 = 0;
+        let v2 = 0;
+        let v3 = 0;
 
         for(var i = 0; i<this.compProdutos.length;i++){
          
-          v1 = parseInt(v1) + parseInt(v2) ;
-          v2 = this.compProdutos[i].vendaTri[1] ;
-          v3 = this.compProdutos[i].vendaTri[2] ;
+          v1 += this.compProdutos[i].vendaTri[0] ;
+          v2 += this.compProdutos[i].vendaTri[1] ;
+          v3 += this.compProdutos[i].vendaTri[2] ;
         }
         this.totalQuarterSales = [v1,v2,v3];                 
       },
@@ -74,7 +80,7 @@ export default {
               preco: 25.00,
               vendas: 5,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [3,15,60]
             },
             {
               name: 'Arroz',
@@ -83,7 +89,7 @@ export default {
               preco: 5.00,
               vendas: 3,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [3,15,60]
             },
             {
               name: 'pera',
@@ -91,8 +97,8 @@ export default {
               quantidade: 15,
               preco: 25.00,
               vendas: 2,
-              estoque: 'sim',
-              vendaTri: [15,20,1]
+              estoque: 'nao',
+              vendaTri: [3,15,60]
             },
             {
               name: 'couve',
@@ -101,7 +107,7 @@ export default {
               preco: 25.00,
               vendas: 10,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             {
               name: 'Shitake',
@@ -110,7 +116,7 @@ export default {
               preco: 25.00,
               vendas: 2,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             {
               name: 'Arroz',
@@ -119,7 +125,7 @@ export default {
               preco: 25.00,
               vendas: 10,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             {
               name: 'Feijão',
@@ -128,7 +134,7 @@ export default {
               preco: 25.00,
               vendas: 23,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             {
               name: 'Maionese',
@@ -137,7 +143,7 @@ export default {
               preco: 25.00,
               vendas: 6,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             {
               name: 'Shoyu',
@@ -146,7 +152,7 @@ export default {
               preco: 25.00,
               vendas: 5,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             {
               name: 'Miojo',
@@ -155,7 +161,7 @@ export default {
               preco: 25.00,
               vendas: 3,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             {
               name: 'Lasanha',
@@ -164,7 +170,7 @@ export default {
               preco: 25.00,
               vendas: 25,
               estoque: 'sim',
-              vendaTri: [15,20,1]
+              vendaTri: [10,10,10]
             },
             
           ]
@@ -178,3 +184,9 @@ export default {
  
 };
 </script>
+
+<style>
+.backgroung-color{
+  background-color: #f2f8ff;      
+}
+</style>

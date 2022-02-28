@@ -1,8 +1,9 @@
 <template>
 <v-app-bar
       app
-      color="primary"
+      color="#356097"
       dark
+      clipped-left
     >
       <div class="d-flex align-center">
         <v-img
@@ -14,7 +15,7 @@
           width="40"
         />
 
-        <h1>Don Varejo</h1>
+        <span class="tittle">Don Varejo</span>
       </div>
 
       <v-spacer></v-spacer>
@@ -33,7 +34,7 @@
         {{letter}}
       </v-avatar>
 
-        <span class="mr-2">{{user}}</span>
+        <span class="mr-2 ">{{user}}</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -57,3 +58,15 @@ export default{
     }
 }
 </script>
+
+<style>
+.tittle{
+  font-size: 36px;
+  font-weight: 500;
+  @media(max-width: 576px){
+    font-size: 12px;
+    
+
+  }
+}
+</style>

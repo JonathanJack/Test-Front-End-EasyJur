@@ -1,28 +1,59 @@
 <template>
-<v-card
- class="mx-auto"
- max-width="344"
- outlined
+<v-card class="pa-2 mx-1" 
+
+rounded
+hover
+ 
  >
- <v-list-item three-line>
-  <v-list-item-content>
+ 
     <div class="text-h5 mb-4">
         Mais vendidos
     </div>
-    <div class="d-flex justify-space-between">
-    <h6>categoria</h6>
-    <h6>Produto</h6>
-    <h6>Quantidade</h6>
-    <h6>Lucro</h6>
-    </div>
-    <div v-for="item in maisVendidos" :key="item.name" class="d-flex justify-space-between">
-        <div>{{item.categoria}}</div>
-        <div>{{item.name}}</div>
-        <div>{{item.vendas}}</div>
-        <div>{{item.cash}}</div>
-    </div>
-  </v-list-item-content>
- </v-list-item>  
+
+    <v-simple-table dense class="text-center">
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th>categoria</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="item in maisVendidos"
+              :key="item.name"
+            >
+              <td>{{ item.categoria }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.vendas }}</td>
+              
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+
+    <!--<table>
+        <thead class="d-flex justify-space-between">
+            <tr>
+                <th>categoria</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Lucro</th>
+            </tr>
+        </thead>
+        <tbody v-for="item in maisVendidos" :key="item.name" class="d-flex justify-space-between">
+            <tr>
+                <td>{{item.categoria}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.vendas}}</td>
+                <td>{{item.cash}}</td>
+                <td>adsads</td>
+            </tr>    
+        </tbody>
+    </table> -->
+ 
       
 </v-card>
 </template>
@@ -53,7 +84,7 @@ export default {
             this.maisVendidos = max;
         }
     },
-    mounted(){
+    created(){
         this.calculaVendas(this.produtos)
     }
 }
