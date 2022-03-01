@@ -90,16 +90,16 @@ export default {
           this.compProdutos = [
             {
               name: 'Feijão',
-              categoria: 'Organico',
+              categoria: 'Orgânico',
               quantidade: 15,
-              preco: 25.00,
+              preco: 1,
               vendas: 5,
               estoque: 'sim',
               vendaTri: [3,15,60]
             },
             {
               name: 'Arroz',
-              categoria: 'Organico',
+              categoria: 'Orgânico',
               quantidade: 15,
               preco: 5.00,
               vendas: 3,

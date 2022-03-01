@@ -5,7 +5,7 @@
         Mais vendidos
     </div>
 
-    <v-simple-table dense class="text-center">
+    <v-simple-table dense class="">
         <template v-slot:default>
           <thead>
             <tr>

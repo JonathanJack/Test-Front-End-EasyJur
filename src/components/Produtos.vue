@@ -11,7 +11,8 @@
       hide-details   
       />
 
-      <v-data-table      
+      <v-data-table    
+      
       :headers="headers"
       :items="produtos"
       :search="search"
@@ -20,6 +21,7 @@
       sort-by="name"  
       group-by="categoria"            
       mobile
+      
       style="background-color: #f2f8ff"                                             
       >
 
