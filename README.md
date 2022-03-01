@@ -14,6 +14,15 @@ Acessar Site: https://easyjurtest.netlify.app/
 - Responsivo
 - Menu Lateral Mockado
 
+##Next Features
+- Gráfico de produto específico deve ser atualizado ao clicar em um CTA na lista de produto. 
+- Criar Routes no menu Lateral
+- Armazenar hisórico de vendas em até 12 meses, e tornar possível escolher quantos meses será mostrado no gráfico
+
+## OBS
+- Gráfico de produto específico não concluído ainda.
+- Foi utilizado o MockAPI, porém os valores aleatórios gerado por ele, deixa o Layout muito irrealista( diversas categorias com somente 1 produto). Então foi decidido deixa-lo comentado no código, por enquanto.
+
 ## Project setup
 ```
 npm install
@@ -32,6 +41,12 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
+
+### lodash 
+npm i --save lodash
+```
+### Chart.js
+npm install chart.js
 ```
 
 ### Customize configuration
