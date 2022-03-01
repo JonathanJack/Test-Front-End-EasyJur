@@ -49,7 +49,7 @@
     },
     created(){
       
-      console.log(this.totalQuarterSales);
+      // console.log(this.totalQuarterSales);
       this.option.series.data = this.totalQuarterSales
     
     }
