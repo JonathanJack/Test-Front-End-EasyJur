@@ -1,5 +1,7 @@
 # vue-easyjur
 
+Acessar Site: https://easyjurtest.netlify.app/
+
 ## Project setup
 ```
 npm install
