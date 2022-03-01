@@ -1,15 +1,10 @@
 <template>
 
-
-
 <v-chart class="mt-5 " :option="option" ></v-chart > 
 
 </template>
 
 <script>
-//  import { INIT_OPTIONS_KEY } from 'vue-echarts' // in component options { provide: { [INIT_OPTIONS_KEY]: { ... } } } 
-
-
   export default{
     props:{
       totalQuarterSales: [],
@@ -41,13 +36,12 @@
                   }
                 },
                 label: {
-        show: true,
-        position: 'bottom',
-        textStyle: {
-          fontSize: 12
-        }
-      }
-                
+                  show: true,
+                  position: 'bottom',
+                  textStyle: {
+                    fontSize: 12
+                  }
+                }                 
               }
             ],           
           }
@@ -69,7 +63,5 @@
         width: 50%;
         height: 300px; 
     }
-
-    
- 
+     
 </style>

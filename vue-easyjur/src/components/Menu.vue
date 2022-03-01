@@ -3,13 +3,10 @@
     <v-navigation-drawer 
     app  
     clipped  
-    
-    color="#356097"
-    permanent
-        expand-on-hover
-    
-    
-    
+    :v-model="null" 
+    class="rounded-border"     
+    color="#356097"    
+    expand-on-hover            
     >
       <v-list>
         
@@ -41,34 +38,7 @@
   </div>
 </template>
 
-<script>
 
-
-export default{
-data(){
-  return{
-    abas: [
-        {
-          nome: "Home",          
-          // icone: "mdi-home-variant-outline",
-        },
-        {
-          nome: "Dashboard",          
-          // icone: "mdi-home-variant-outline",
-        },
-        {
-          nome: "Clientes",          
-          // icone: "mdi-home-variant-outline",
-        },
-        {
-          nome: "Fornecedores",          
-          // icone: "mdi-home-variant-outline",
-        },
-    ]
-  }
-}
-}
-</script>
 
 <style>
 .tittle-menu{

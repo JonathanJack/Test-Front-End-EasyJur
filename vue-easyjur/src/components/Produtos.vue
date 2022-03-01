@@ -3,26 +3,24 @@
   
   <v-row>  
     <v-col cols="12" md="8">
+    
       <v-text-field
-    v-model="search"
-    label="Buscar por nome ou status"
-    single-line
-    hide-details
-   
-  />
+      v-model="search"
+      label="Buscar por nome ou status"
+      single-line
+      hide-details   
+      />
 
-      <v-data-table
-        
-        :headers="headers"
-        :items="produtos"
-        :search="search"
-        :custom-filter="filter"
-        item-key="name"
-        sort-by="name"  
-        group-by="categoria"            
-        mobile
-        style="background-color: #f2f8ff"  
-                                           
+      <v-data-table      
+      :headers="headers"
+      :items="produtos"
+      :search="search"
+      :custom-filter="filter"
+      item-key="name"
+      sort-by="name"  
+      group-by="categoria"            
+      mobile
+      style="background-color: #f2f8ff"                                             
       >
 
         <template v-slot:group.header="{items,isOpen,toggle}">
@@ -88,10 +86,4 @@
     
   }
 </script>
-
-<style>
-.teste{
-  overflow-wrap: anywhere;
-}
-</style>
 

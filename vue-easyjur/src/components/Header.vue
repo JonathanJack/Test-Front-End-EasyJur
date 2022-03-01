@@ -1,40 +1,28 @@
 <template>
-<v-app-bar
-      app
-      color="#356097"
-      dark
-      clipped-left
-    >
+<v-app-bar app color="#356097" dark clipped-left>
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          :src="require('../assets/logo.png')"
-          transition="scale-transition"
-          width="40"
+        alt="Vuetify Logo"
+        class="shrink mr-2"
+        contain
+        :src="require('../assets/logo.png')"
+        transition="scale-transition"
+        width="40"
         />
-
         <span class="tittle">Don Varejo</span>
       </div>
 
       <v-spacer></v-spacer>
 
+      
+      <v-avatar alt="Foto do Usuário" class="mr-3" color="teal" size="36">{{letter}}</v-avatar>        
+                                                    
+      <span class="mr-2 ">{{user}}</span>
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+      href="https://github.com/JonathanJack/Test-Front-End-EasyJur"
+      target="_blank"
+      text
       >
-      <v-avatar
-        alt="Foto do Usuário"
-        class="mr-3"
-        color="teal"
-        size="36"        
-      >
-        {{letter}}
-      </v-avatar>
-
-        <span class="mr-2 ">{{user}}</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -61,12 +49,7 @@ export default{
 
 <style>
 .tittle{
-  font-size: 36px;
-  font-weight: 500;
-  @media(max-width: 576px){
-    font-size: 12px;
-    
-
-  }
+  font-size: calc(2vw + 1vh + 1vmin);
+  font-weight: 500;  
 }
 </style>

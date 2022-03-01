@@ -2,28 +2,30 @@
  <v-app>
     
     
-  <v-main class="backgroung-color">
-    <Header/> 
-    <Menu/>
-  
-    <v-row >    
-      
-        <Grafico class="col-12 col-md-6" compTittle="Vendas totais | últimos 3 meses" :totalQuarterSales="totalQuarterSales" compColor="#5a8929"/>        
-  
-    
-        <Grafico class="col-12 col-md-6" :totalQuarterSales="this.compProdutos[0].vendaTri" compTittle="Vendas totais por produto"/>         
-           
-    </v-row>
-    
-    <Produtos2 :compProdutos="compProdutos" />        
+  <div class="adjust-align backgroung-color">
+    <Header/>     
+    <Menu v-if="calcScreenWidth"/>    
+    <v-row >          
+        <Grafico 
+        class="col-12 col-md-6" 
+        compTittle="Vendas totais | últimos 3 meses"          
+        compColor="#5a8929"   
+        :totalQuarterSales="totalQuarterSales"
+        />
+        <Grafico   
+        class="col-12 col-md-6"
+        compTittle="Vendas totais por produto"
+        :totalQuarterSales="this.compProdutos[0].vendaTri"
+        />                            
+    </v-row>    
+    <Produtos :compProdutos="compProdutos" />        
                              
-  </v-main>
+  </div>
 </v-app>
 </template>
 
 <script>
-import Produtos2 from './components/Produtos2';
-
+import Produtos from './components/Produtos';
 import Header from './components/Header'
 import Grafico from './components/Grafico'
 import Menu from './components/Menu'
@@ -34,8 +36,7 @@ export default {
 
   components: {
     Header,
-    Produtos2,
-    // TopVendas,
+    Produtos,    
     Grafico,
     Menu,
   },
@@ -45,6 +46,16 @@ export default {
       totalQuarterSales: [],      
     }
   },
+   created(){
+    this.obtemProdutos()
+    this.calcTotalQuarterSales()
+
+    
+  },
+  mounted(){
+    this.calcScreenWidth()
+  },
+
   methods: {
 
 
@@ -60,6 +71,10 @@ export default {
           v3 += this.compProdutos[i].vendaTri[2] ;
         }
         this.totalQuarterSales = [v1,v2,v3];                 
+      },
+      calcScreenWidth(){
+        console.log(window.innerWidth)
+        return window.innerWidth >= 576;
       },
 
     // obtemProdutos(){
@@ -175,17 +190,19 @@ export default {
             
           ]
         }
-  },
-  created(){
-    this.obtemProdutos()
-    this.calcTotalQuarterSales()
-  }
-
- 
+  },  
 };
 </script>
 
 <style>
+
+@media(min-width:992px){
+  .adjust-align{
+    padding: 5% 0px 0px 5%
+  }
+}
+
+
 .backgroung-color{
   background-color: #f2f8ff;      
 }

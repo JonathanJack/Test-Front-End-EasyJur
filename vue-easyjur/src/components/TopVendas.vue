@@ -1,11 +1,6 @@
 <template>
-<v-card class="pa-2 mx-1" 
+<v-card class="pa-2 mx-1"  rounded hover>
 
-rounded
-hover
- 
- >
- 
     <div class="text-h5 mb-4">
         Mais vendidos
     </div>
@@ -22,7 +17,7 @@ hover
           </thead>
           <tbody>
             <tr
-              v-for="item in maisVendidos"
+              v-for="item in topSales"
               :key="item.name"
             >
               <td>{{ item.categoria }}</td>
@@ -32,29 +27,7 @@ hover
             </tr>
           </tbody>
         </template>
-      </v-simple-table>
-
-    <!--<table>
-        <thead class="d-flex justify-space-between">
-            <tr>
-                <th>categoria</th>
-                <th>Produto</th>
-                <th>Quantidade</th>
-                <th>Lucro</th>
-            </tr>
-        </thead>
-        <tbody v-for="item in maisVendidos" :key="item.name" class="d-flex justify-space-between">
-            <tr>
-                <td>{{item.categoria}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.vendas}}</td>
-                <td>{{item.cash}}</td>
-                <td>adsads</td>
-            </tr>    
-        </tbody>
-    </table> -->
- 
-      
+      </v-simple-table>          
 </v-card>
 </template>
 
@@ -67,8 +40,8 @@ export default {
     },
     data(){
         return{
-            maisVendidos: [],
-            produtos: this.compProdutos,
+            topSales: [],
+            Products: this.compProdutos,
         }
     },
     methods: {
@@ -81,11 +54,11 @@ export default {
                 .flatten()
                 .value();
 
-            this.maisVendidos = max;
+            this.topSales = max;
         }
     },
     created(){
-        this.calculaVendas(this.produtos)
+        this.calculaVendas(this.Products)
     }
 }
 

@@ -1,18 +1,16 @@
 <template>
 <v-card class="pa-2 mx-1" 
-
 rounded
 hover
- 
- >
+>
   <div class="text-h5 mb-4">
         Fornecedores
-    </div>
+  </div>
   <v-simple-table disable>
     <template v-slot:default>   
       <tbody>
         <tr
-          v-for="item in desserts"
+          v-for="item in suppliers"
           :key="item.name"
         >
           <td>{{ item.name }}</td>
@@ -54,21 +52,8 @@ hover
   export default {
     data () {
       return {
-        expanded: [],
-        singleExpand: false,
-        dessertHeaders: [
-          {
-            text: 'Nome',            
-            sortable: false,
-            value: 'name',
-          },          
-          { text: 'Telefone Fixo', value: 'fat' },
-          { text: 'Whataspp', value: 'whatstapp' },
-          
-          
-          
-        ],
-        desserts: [
+                       
+        suppliers: [
           {
             name: 'Fazendinha Sol',            
             tel: '24568761',
