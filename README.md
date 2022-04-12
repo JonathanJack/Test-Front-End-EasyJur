@@ -21,7 +21,7 @@ Acessar Site: https://easyjurtest.netlify.app/
 
 ## OBS
 - Gráfico de produto específico não concluído ainda.
-- Foi utilizado o MockAPI, porém os valores aleatórios gerado por ele, deixa o Layout muito irrealista( diversas categorias com somente 1 produto). Então foi decidido deixa-lo comentado no código, por enquanto.
+
 
 ## Project setup
 ```
