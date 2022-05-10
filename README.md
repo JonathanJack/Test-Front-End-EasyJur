@@ -1,4 +1,4 @@
-# vue-easyjur
+# vue Dashboard Vendas
 
 Acessar Site: https://easyjurtest.netlify.app/
 
