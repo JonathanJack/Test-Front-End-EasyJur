@@ -17,7 +17,7 @@ Acessar Site: https://easyjurtest.netlify.app/
 ## Next Features
 - Gráfico de produto específico deve ser atualizado ao clicar em um CTA na lista de produto. 
 - Criar Routes no menu Lateral
-- Armazenar hisórico de vendas em até 12 meses, e tornar possível escolher quantos meses será mostrado no gráfico
+- Armazenar histórico de vendas em até 12 meses, e tornar possível escolher quantos meses será mostrado no gráfico
 
 ## OBS
 - Gráfico de produto específico não concluído ainda.
