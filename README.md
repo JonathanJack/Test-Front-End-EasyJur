@@ -2,6 +2,9 @@
 
 Acessar Site: https://easyjurtest.netlify.app/
 
+![image](https://user-images.githubusercontent.com/46769610/168886804-ef941e49-bf51-498a-92e5-0995207d8d66.png)
+
+
 ## Funcionalidades
 - Header com Logo, nome do Estabelecimento, Nome do usuario, e imagem sendo calculada a partir da primeira letra desse usuário
 - Lista de produtos
