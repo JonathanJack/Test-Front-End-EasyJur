@@ -11,7 +11,7 @@ Acessar Site: https://easyjurtest.netlify.app/
 - Pesquisa de produtos
 - Ordenação de produtos
 - Gráfico sobre o total de vendas trimestrais de todos os produtos
-- Gráfico sobre o total de vendas trimestrais de um protudo específico*
+- Gráfico sobre o total de vendas trimestrais de um produto específico* (não funcionando ainda)
 - Card com o produtos mais vendidos de cada categoria
 - Card com lista de fornecedores, contendo uma tooltip com o telefone do estabelecimento e um link externo para conversar pelo whatsapp
 - Responsivo
